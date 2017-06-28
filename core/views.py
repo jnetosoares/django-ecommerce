@@ -6,10 +6,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    texts = ['Exemplo', 'Django e-commerce', 'Udemy']
+    texto = ['Projeto Supervisionado', 'Django e-commerce', 'IFPI']
     context = {
         'title': 'django e-commerce',
-        'texts': texts
+        'texto': texto
     }
     return render(request, 'index.html', context)
 
