@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 
@@ -9,10 +10,18 @@ class Category(models.Model):
     created = models.DateTimeField('Criado em', auto_now_add=True)
     modified = models.DateTimeField('Modificado em', auto_now=True)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = "Categoria"
         verbose_name_plural = "Categorias"
         ordering = ['name']
+        db_tablespace = "categorias"
+
+    def get_absolute_url(self):
+        return reverse('catalogo:categoria', kwargs={'slug':self.slug})
+
 
 class Product(models.Model):
     name = models.CharField('nome',max_length=100)
@@ -24,7 +33,13 @@ class Product(models.Model):
     created = models.DateTimeField('Criado em', auto_now_add=True)
     modified = models.DateTimeField('Modificado em', auto_now=True)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = "Produto"
         verbose_name_plural = "Produtos"
         ordering = ['name']
+
+    def get_absolute_url(self):
+        return reverse('catalogo:produto', kwargs={'slug':self.slug})

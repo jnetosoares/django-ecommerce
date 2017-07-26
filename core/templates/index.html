@@ -2,15 +2,7 @@
 
 {% block container %}
     <div class="jumbotron page-header">
-		  <h1>{{ title|capfirst }}</h1>
-		  <p>
-              {% for item in texto %}
-              {{ item }}
-              {% if not forloop.last %}
-              ,
-              {% endif %}
-              {% endfor %}
-          </p>
+		  <h1>Django E-commerce</h1>
 		  <p><a class="btn btn-primary">Saiba mais</a></p>
 	</div>
 {% endblock %}

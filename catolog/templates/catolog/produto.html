@@ -6,7 +6,7 @@
 
 {% block container %}
 		<div class="page-header">
-		  <h1>Página do Produto</h1>
+		  <h1>{{ produto }}</h1>
 		</div>
 		<div class="row">
 		  <div class="col-sm-4">
@@ -16,16 +16,10 @@
 		  </div>
 		  <div class="col-sm-8">
 			  <dl>
-			  	<dt>Lorem ipsum:</dt>
-				<dd>Lorem ipsum dolor sit amet</dd>
-				<dt>Lorem ipsum:</dt>
-				<dd>Lorem ipsum dolor sit amet</dd>
-				<dt>Lorem ipsum:</dt>
-				<dd>Lorem ipsum dolor sit amet</dd>
-				<dt>Lorem ipsum:</dt>
-				<dd>Lorem ipsum dolor sit amet</dd>
-				<dt>Lorem ipsum:</dt>
-				<dd>Lorem ipsum dolor sit amet</dd>
+			  	<dt>Descrição:</dt>
+				<dd>{{ produto.descrition }}</dd>
+				<dt>Preço:</dt>
+				<dd>{{ produto.price }}</dd>
 			  </dl>
 		  </div>
 		</div>
